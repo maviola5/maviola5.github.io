@@ -6,6 +6,7 @@
         <title>Tony Viola | Resume</title>
         <!-- <link rel="stylesheet" href="main.css"> -->
         <meta name="description" content="A web developer, based in Washington, D.C., interested in building, learning and helping others succeed">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     </head>
     <body>
         <style>
@@ -23,12 +24,16 @@
                 font-family: sans-serif;
                 font-size: 1.6rem;
             }
+            p {
+                line-height: 1.5;
+            }
             header {
                 /* background-color: #fe4b5f; */
                 background: grey;
                 padding: 4rem 1rem;
                 text-align: center;
                 box-shadow: 0px 0px 10px 1px #000;
+                position: relative;
             }
             .circle {
                 border-radius: 50%;
@@ -36,6 +41,7 @@
                 width: 200px;
                 height: 200px;
                 margin: auto;
+                /* margin-bottom: 1rem; */
             }
             h1 {
                 font-size: 3rem;
@@ -51,106 +57,172 @@
                 box-shadow: 1px 3px 10px -2px #000;
                 margin-bottom: 2rem;
             }
-            .card h3, .card p {
+            .card h3, .card .badges {
                 padding: 0 1rem;
             }
             .card img {
                 width: 100%;
             }
-            .skills ul {
+            .badges {
                 margin: 0;
                 padding: 0;
-                margin: 0 -0.5rem;
+                margin: 0 -0.5rem 1rem;
             }
-
-            li {
+            .badges li {
                 display: inline-block;
                 padding: 1rem;
-            }
-
-            li {
                 background: grey;
                 color: #fff;
                 border-radius: 5px;
                 padding: 0.5rem;
                 margin: 0.5rem;
+                font-size: 1.4rem;
+            }
+            .social-icons {
+                /* text-decoration: none; */
+                list-style: none;
+                text-align: center;
+                margin: 0;
+                padding: 0;
+                top: -1.5rem;
+                position: relative;
+            }
+            .social-icons li {
+                display: inline-block;
+            }
+            .social-icons li a {
+                display: block;
+                margin: auto;
+                background: #000;
+                width: 3rem;
+                height: 3rem;
+                border-radius: 50%;
+                color: #fff;
+                padding: 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
             }
         </style>
         <header>
-                <div class="circle"></div>
-                <h1>Tony Viola</h1>
+            <div class="circle"></div>
+            <ul class="social-icons">
+                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                <!-- <li><i class="fa fa-twitter" aria-hidden="true"></i></li> -->
+                <!-- <li><i class="fa fa-github" aria-hidden="true"></i></li> -->
+            </ul>
+            <h1>Tony Viola</h1>
         </header>
         <main>
             <section>
                 <h2>About</h2>
-                <p>Currently based in the District of Columbia, I am enthustiastic about building business applications, learning new technologies, solving problems and helping others along the way.</p>
+                <p><strong>TL;DR</strong> Currently based in the District of Columbia, I am enthustiastic about building business applications, learning new technologies, solving problems and helping others along the way.</p>
+                <p>I grew up in a small town, with big ideas. However, living in the city and developing on the web seemed like a far fetched idea for this guy in highschool. Determination, willingness to learn, grow as a person and surrounding myself with great people has lead me to a career that I love. I have played sports for a majority of my life, so working as a team player is second nature. One thing I have learned to embrace over the years is diversity and culture. Together we can get to where we want to go. I am always looking for oppurtunities to work with people who are passionate and want to achieve the impossible.</p>
+                <p>I like learning on the job and in my free time. I am extremly motivated. Some of my favorite challenges are exploring cutting edge Javascript, mashing up REST APIs, quick prototyping, breaking down massive problems into managable puzzles and helping people get to the next level.</p>
             </section>
             <section>
-                <h2>Project Highlights</h2>
+                <h2>Projects</h2>
 
                 <div class="card">
                     <img src="http://via.placeholder.com/300x200">
                     <h3 class="stack"><a href="https://www.nacdonline.org/summit">NACD Global Board Leaders Summit Microsite</a></h3>
-                    <p class="stack">Responsive site for marketing the organizations biggest yearly initiative. Runs on a legacy CMS(coldfusion) platform with Vue.js as a frontend.</p>
+                    <ul class="badges">
+                        <li>Vue.js</li>
+                        <li>Coldfusion</li>
+                        <li>JSON API</li>
+                        <li>REST API</li>
+                        <li>Wordpress</li>
+                        <li>Salesforce</li>
+                    </ul>
                 </div>
     
                 <div class="card">
                     <img src="http://via.placeholder.com/300x200">
-                    <h3 class="stack"><a href="https://www.nacdonline.org">Redesign of nacdonline.org</a></h3>
-                    <p class="stack">A redesign initiative to turn flagship website responsive. Created JSON endpoints to support frontend Vue.JS client application.</p>
+                    <h3 class="stack"><a href="https://www.nacdonline.org">nacdonline.org (redesign)</a></h3>
+                    <ul class="badges">
+                        <li>Vue.js</li>
+                        <li>Coldfusion</li>
+                        <li>JSON API</li>
+                        <li>Salesforce</li>
+                        <li>REST API</li>
+                    </ul>
                 </div>
     
                 <div class="card">
                     <img src="http://via.placeholder.com/300x200">
-                    <h3 class="stack"><a href="https://blog.nacdonline.org">Redesign of blog.nacdonline.org</a></h3>
-                    <p class="stack">Vue SSR and Express.js application using Wordpress as a headless CMS.</p>
+                    <h3 class="stack"><a href="https://blog.nacdonline.org">blog.nacdonline.org (redesign)</a></h3>
+                    <ul class="badges">
+                        <li>Vue SSR</li>
+                        <li>Node.js</li>
+                        <li>Express</li>
+                        <li>Wordpress</li>
+                        <li>JSON API</li>
+                        <li>Headless CMS</li>
+                    </ul>
                 </div>
     
                 <div class="card">
                     <h3 class="stack">DOMO Contact/Account Application</h3>
-                    <p class="stack">Client application using Vue.js to explore Saleforce data in DOMO.</p>
+                    <ul class="badges">
+                        <li>Vue.js</li>
+                        <li>JSON API</li>
+                        <li>DOMO</li>
+                    </ul>
                 </div>
     
                 <div class="card">
                     <h3 class="stack">DOMO Data Connector</h3>
-                    <p>Data connector (Express.js server) to bridge various platforms that do not have out of the box capability to link up to DOMO.</p>
+                    <ul class="badges">
+                        <li>Vue.js</li>
+                        <li>JSON API</li>
+                        <li>DOMO</li>
+                        <li>Nodes.js</li>
+                        <li>Express</li>
+                        <li>Coldfusion</li>
+                    </ul>
                 </div>
             </section>
 
             <section class="skills">
-                    <h2>Skills &amp; Technology Stacks</h2>
-                    <div>
-                        <h3>Things I work with daily:</h3>
-                        <ul>
-                            <li>HTML/CSS</li>
-                            <li>JavaScript (Node.js, Vue, Express)</li>
-                            <li>Coldfusion</li>
-                            <li>Git</li>
-                            <li>REST APIs</li>
-                            <li>Heroku</li>
-                            <li>DOMO</li>
-                            <li>Google Analytics/Google Tag Manager</li>
-                            <li>Command Line/Terminal</li>
-                        </ul>
-                    </div>
+                <h2>Skills &amp; Technology Stacks</h2>
+
+                <h3>Things I work with daily:</h3>
+                <ul class="badges">
+                    <li>HTML/CSS</li>
+                    <li>JavaScript</li>
+                    <li>Node.js</li>
+                    <li>Vue</li>
+                    <li>Express</li>
+                    <li>Coldfusion</li>
+                    <li>Git</li>
+                    <li>REST APIs</li>
+                    <li>Heroku</li>
+                    <li>DOMO</li>
+                    <li>Google Analytics</li>
+                    <li>Google Tag Manager</li>
+                    <li>Command Line</li>
+                    <li>Terminal</li>
+                </ul>
+                    
     
-                   <div>
-                        <h3>Things I work with occasionally:</h3>
-                        <ul>
-                            <li>Salesforce Languages(Apex, VisualForce, SOQL)</li>
-                            <li>PHP</li>
-                            <li>SQL</li>
-                            <li>MongoDB</li>
-                            <li>Redis</li>
-                            <li>Angular</li>
-                            <li>Adobe Illustrator</li>
-                        </ul>
-                   </div>
-                </section>
+                   
+                <h3>Things I work with occasionally:</h3>
+                <ul class="badges">
+                    <li>Salesforce</li> 
+                    <li>Apex</li>
+                    <li>VisualForce</li>
+                    <li>SOQL</li>
+                    <li>PHP</li>
+                    <li>SQL</li>
+                    <li>MongoDB</li>
+                    <li>Redis</li>
+                    <li>Angular</li>
+                    <li>Adobe Illustrator</li>
+                </ul>
+            </section>
         </main>
-        <footer>
-            <span id="year">2018</span> Tony Viola
-        </footer>
         <!-- <header>
             <div>
                 <style>
