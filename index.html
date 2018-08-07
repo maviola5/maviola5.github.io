@@ -7,6 +7,8 @@
         <!-- <link rel="stylesheet" href="main.css"> -->
         <meta name="description" content="A web developer, based in Washington, D.C., interested in building, learning and helping others succeed">
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+
     </head>
     <body>
         <style>
@@ -23,17 +25,36 @@
             body {
                 font-family: sans-serif;
                 font-size: 1.6rem;
+                font-family: 'Source Sans Pro', sans-serif;
+                background: #f7f7f7;
+                color: #333;
             }
             p {
                 line-height: 1.5;
+            }
+            img {
+                width: 100%;
+                height: auto;
+                display: block;
             }
             header {
                 /* background-color: #fe4b5f; */
                 background: grey;
                 padding: 4rem 1rem;
                 text-align: center;
-                box-shadow: 0px 0px 10px 1px #000;
+                box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.5);
                 position: relative;
+                /* https://trianglify.io/ */
+                background-image: url('img/trianglify.svg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                /* background-size:  */
+                /* https://uigradients.com/#Firewatch */
+                /* background: #2F80ED;  fallback for old browsers */
+                /*background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);  /* Chrome 10-25, Safari 5.1-6 */
+                /*background: linear-gradient(to right, #2F80ED, #56CCF2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
             }
             .circle {
                 border-radius: 50%;
@@ -43,35 +64,64 @@
                 margin: auto;
                 /* margin-bottom: 1rem; */
             }
+            .circle img {
+                width: 150%;
+                /* margin: auto; */
+                position: relative;
+                left: 14px;
+                filter: grayscale(51%);
+            }
+
+            .circle {
+                overflow: hidden;
+                display: flex;
+                position: relative;
+                justify-content: center;
+            }
+
+            .circle img:after {
+                /* content: "test"; */
+            }
+
+            .circle:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                /* background: rgba(0, 0, 0, 0.1); */
+                filter: grayscale(51%);
+            }
+            a {
+                color: #2F80ED;
+                text-decoration: none;
+            }
             h1 {
-                font-size: 3rem;
+                font-size: 4rem;
                 margin: 1rem;
             }
             main {
                 padding: 0 1rem;
             }
-            .card {
-                border-radius: 5px;
-                overflow: hidden;
-                border-top-left-radius: 5px;
-                box-shadow: 1px 3px 10px -2px #000;
-                margin-bottom: 2rem;
+            .project-card {
+                margin: 4rem 0;
             }
-            .card h3, .card .badges {
-                padding: 0 1rem;
+            .project-card h3 {
+                margin: 1rem 0;
             }
-            .card img {
-                width: 100%;
+            .project-card img {
+                margin: 1rem 0;
             }
             .badges {
                 margin: 0;
                 padding: 0;
-                margin: 0 -0.5rem 1rem;
+                margin: 1rem -0.5rem 1rem;
             }
             .badges li {
                 display: inline-block;
                 padding: 1rem;
-                background: grey;
+                background: #333;
                 color: #fff;
                 border-radius: 5px;
                 padding: 0.5rem;
@@ -93,7 +143,7 @@
             .social-icons li a {
                 display: block;
                 margin: auto;
-                background: #000;
+                background: #333;
                 width: 3rem;
                 height: 3rem;
                 border-radius: 50%;
@@ -104,244 +154,282 @@
                 justify-content: center;
                 text-decoration: none;
             }
+            .time-card {
+                display: flex;
+                flex-flow: row wrap;
+                /* align-items: center; */
+                /* align-items: stretch; */
+            }
+            .time-card .period {
+                flex: 0 0 20%;
+                font-weight: 700;
+                display: flex;
+                /* align-items: center; */
+                position: relative;
+                padding: 0 0 0 4rem;
+            }
+            .time-card .description {
+                flex: 0 0 80%;
+                margin-bottom: 4rem;
+            }
+            .time-card .description h3 {
+                margin-top: 0;
+            }
+            .period:before {
+                content: '';
+                border: 1rem solid #333;
+                border-radius: 50%;
+                display: block;
+                position: absolute;
+                top: 3px;
+                left: 0;
+            }
+            .period:after {
+                content: '';
+                position: absolute;
+                height: 100%;
+                border-left: 3px solid #333;
+                left: 8px;
+                top: 3px;
+            }
+            .last.period:after {
+                border: none;
+            }
+            .sexy_line { 
+                margin: 6rem 0;
+                height: 1px;
+                background: #333;
+                background: -webkit-gradient(linear, 0 0, 100% 0, from(white), to(white), color-stop(50%, #333));
+            }
+            @media (min-width: 40em) {
+                /* .grid {
+                    display: grid;
+                    grid-template-columns: 1fr 40em;
+                } */
+                main {
+                    max-width: 50em;
+                    margin: auto;
+                }
+            }
+            @media (min-width: 64em) {
+                .grid {
+                    display: grid;
+                    grid-template-columns: minmax(100px, 300px) 1fr;
+                }
+                header {
+                    grid-column: span 1;
+                }
+                main {
+                    grid-column: span 1
+                }
+                header {
+                    background-image: url('/img/trianglify-desktop.svg');
+                }
+            }
         </style>
-        <header>
-            <div class="circle"></div>
-            <ul class="social-icons">
-                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                <!-- <li><i class="fa fa-twitter" aria-hidden="true"></i></li> -->
-                <!-- <li><i class="fa fa-github" aria-hidden="true"></i></li> -->
-            </ul>
-            <h1>Tony Viola</h1>
-        </header>
-        <main>
-            <section>
-                <h2>About</h2>
-                <p><strong>TL;DR</strong> Currently based in the District of Columbia, I am enthustiastic about building business applications, learning new technologies, solving problems and helping others along the way.</p>
-                <p>I grew up in a small town, with big ideas. However, living in the city and developing on the web seemed like a far fetched idea for this guy in highschool. Determination, willingness to learn, grow as a person and surrounding myself with great people has lead me to a career that I love. I have played sports for a majority of my life, so working as a team player is second nature. One thing I have learned to embrace over the years is diversity and culture. Together we can get to where we want to go. I am always looking for oppurtunities to work with people who are passionate and want to achieve the impossible.</p>
-                <p>I like learning on the job and in my free time. I am extremly motivated. Some of my favorite challenges are exploring cutting edge Javascript, mashing up REST APIs, quick prototyping, breaking down massive problems into managable puzzles and helping people get to the next level.</p>
-            </section>
-            <section>
-                <h2>Projects</h2>
-
-                <div class="card">
-                    <img src="http://via.placeholder.com/300x200">
-                    <h3 class="stack"><a href="https://www.nacdonline.org/summit">NACD Global Board Leaders Summit Microsite</a></h3>
-                    <ul class="badges">
-                        <li>Vue.js</li>
-                        <li>Coldfusion</li>
-                        <li>JSON API</li>
-                        <li>REST API</li>
-                        <li>Wordpress</li>
-                        <li>Salesforce</li>
-                    </ul>
+        <div class="grid">
+            <header>
+                <div class="circle">
+                    <img src="/img/Tony_Headshots0004.jpg" alt="">
                 </div>
-    
-                <div class="card">
-                    <img src="http://via.placeholder.com/300x200">
-                    <h3 class="stack"><a href="https://www.nacdonline.org">nacdonline.org (redesign)</a></h3>
-                    <ul class="badges">
-                        <li>Vue.js</li>
-                        <li>Coldfusion</li>
-                        <li>JSON API</li>
-                        <li>Salesforce</li>
-                        <li>REST API</li>
-                    </ul>
-                </div>
-    
-                <div class="card">
-                    <img src="http://via.placeholder.com/300x200">
-                    <h3 class="stack"><a href="https://blog.nacdonline.org">blog.nacdonline.org (redesign)</a></h3>
-                    <ul class="badges">
-                        <li>Vue SSR</li>
-                        <li>Node.js</li>
-                        <li>Express</li>
-                        <li>Wordpress</li>
-                        <li>JSON API</li>
-                        <li>Headless CMS</li>
-                    </ul>
-                </div>
-    
-                <div class="card">
-                    <h3 class="stack">DOMO Contact/Account Application</h3>
-                    <ul class="badges">
-                        <li>Vue.js</li>
-                        <li>JSON API</li>
-                        <li>DOMO</li>
-                    </ul>
-                </div>
-    
-                <div class="card">
-                    <h3 class="stack">DOMO Data Connector</h3>
-                    <ul class="badges">
-                        <li>Vue.js</li>
-                        <li>JSON API</li>
-                        <li>DOMO</li>
-                        <li>Nodes.js</li>
-                        <li>Express</li>
-                        <li>Coldfusion</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section class="skills">
-                <h2>Skills &amp; Technology Stacks</h2>
-
-                <h3>Things I work with daily:</h3>
-                <ul class="badges">
-                    <li>HTML/CSS</li>
-                    <li>JavaScript</li>
-                    <li>Node.js</li>
-                    <li>Vue</li>
-                    <li>Express</li>
-                    <li>Coldfusion</li>
-                    <li>Git</li>
-                    <li>REST APIs</li>
-                    <li>Heroku</li>
-                    <li>DOMO</li>
-                    <li>Google Analytics</li>
-                    <li>Google Tag Manager</li>
-                    <li>Command Line</li>
-                    <li>Terminal</li>
+                <ul class="social-icons">
+                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                    <!-- <li><i class="fa fa-twitter" aria-hidden="true"></i></li> -->
+                    <!-- <li><i class="fa fa-github" aria-hidden="true"></i></li> -->
                 </ul>
-                    
-    
-                   
-                <h3>Things I work with occasionally:</h3>
-                <ul class="badges">
-                    <li>Salesforce</li> 
-                    <li>Apex</li>
-                    <li>VisualForce</li>
-                    <li>SOQL</li>
-                    <li>PHP</li>
-                    <li>SQL</li>
-                    <li>MongoDB</li>
-                    <li>Redis</li>
-                    <li>Angular</li>
-                    <li>Adobe Illustrator</li>
-                </ul>
-            </section>
-        </main>
-        <!-- <header>
-            <div>
-                <style>
-                    img {
-                        max-width: 320px;
-                        clip-path: circle(100px at 143px 114px);
-                    }
-                </style>
-                <h1>Tony<br>Viola</h1>
-                <img src="Tony_Headshots0004.jpg" alt="">
-            </div>
-        </header>
-        <main>
-            <section>
-                <h2>About</h2>
-                <p>Currently based in the District of Columbia, I am enthustiastic about building business applications, learning new technologies, solving problems and helping others along the way.</p>
-            </section>
-            <section>
-                <h2>Project Highlights</h2>
+                <h1>Tony Viola</h1>
+            </header>
+            <main>
+                <article>
+                    <section>
+                        <h2>About</h2>
+                        <p><strong>TL;DR</strong> Currently based in the District of Columbia, I am enthustiastic about building business applications, learning new technologies, solving problems and helping others along the way.</p>
+                        <p>I grew up in a small town, with big ideas. However, living in the city and developing on the web seemed like a far fetched idea for this guy in highschool. Determination, willingness to learn, grow as a person and surrounding myself with great people has lead me to a career that I love. I have played sports for a majority of my life, so working as a team player is second nature. One thing I have learned to embrace over the years is diversity and culture. Together we can get to where we want to go. I am always looking for oppurtunities to work with people who are passionate and want to achieve the impossible.</p>
+                        <p>I like learning on the job and in my free time. I am extremly motivated. Some of my favorite challenges are exploring cutting edge Javascript, mashing up REST APIs, quick prototyping, breaking down massive problems into managable puzzles and helping people get to the next level.</p>
+                    </section>
+                    <div class="sexy_line"></div>
+                    <section>
+                        <h2>Projects</h2>
+        
+                        <div class="project-card">
+                            <h3><a href="https://www.nacdonline.org/summit">NACD Global Board Leaders Summit Microsite</a></h3>
+                            <img src="img/summit.png" alt="">
+                            <ul class="badges">
+                                <li>Vue.js</li>
+                                <li>Coldfusion</li>
+                                <li>REST API</li>
+                                <li>Wordpress</li>
+                                <li>Salesforce</li>
+                            </ul>
+                        </div>
+        
+                        <div class="project-card">
+                            <h3><a href="https://www.nacdonline.org">nacdonline.org (redesign)</a></h3>
+                            <img src="img/nacdonline.png" alt="">
+                            <ul class="badges">
+                                <li>Vue.js</li>
+                                <li>Coldfusion</li>
+                                <li>Salesforce</li>
+                                <li>REST API</li>
+                            </ul>
+                        </p>
+                        <div class="project-card">
+                                <h3><a href="https://blog.nacdonline.org">blog.nacdonline.org (redesign)</a></h3>
+                                <img src="img/blog-nacdonline.png" alt="">
+                                <ul class="badges">
+                                    <li>Vue SSR</li>
+                                    <li>Node.js</li>
+                                    <li>Express.js</li>
+                                    <li>Wordpress</li>
+                                    <li>REST API</li>
+                                    <li>Headless CMS</li>
+                                </ul>
+                        </div>
+            
+                        <div class="project-card">
+                            <h3>DOMO Contact/Account Application</h3>
+                            <img src="img/5b2a8ac4ee96a68e7364f0b2_LinkedIn Really Good UX 1.png" alt="">
+                            <ul class="badges">
+                                <li>Vue.js</li>
+                                <li>REST API</li>
+                                <li>DOMO</li>
+                            </ul>
+                        </div>
+            
+                        <div class="project-card">
+                            <h3>DOMO Data Connector</h3>
+                            <img src="img/5b2a8acdac43173d6113b09e_LinkedIn Really Good UX 2.png" alt="">
+                            <ul class="badges">
+                                <li>Vue.js</li>
+                                <li>REST API</li>
+                                <li>DOMO</li>
+                                <li>Nodes.js</li>
+                                <li>Express.js</li>
+                                <li>Coldfusion</li>
+                            </ul>
+                        </div>
+                    </section>
+                    <div class="sexy_line"></div>
+                    <section class="experience">
 
-                <h3 class="stack"><a href="https://www.nacdonline.org/summit">NACD Global Board Leaders Summit Microsite</a></h3> 
-                <p class="stack">Responsive site for marketing the organizations biggest yearly initiative. Runs on a legacy CMS(coldfusion) platform with Vue.js as a frontend.</p>
+                        <h2>Experience</h2>
+                        
+                        <div class="time-card">
+                            <div class="period">2018 - PRESENT</div>
+                            <div class="description">
+                                <h3>LEAD WEB DEVELOPER - NATIONAL ASSOCIATION OF CORPORATE DIRECTORS (NACD)</h3>
+                                <p>Responsible for managing and maintaining our web properties, including nacdonline.org, chapter subdomains, blog, internal DOMO applications and front-end support for Salesforce portal. Additional responsibilities include implementing DevOps/productivity strategies, code reviews and knowledge transfer to teammates.</p>
+                            </div>
+                        </div>
 
-                <h3 class="stack">Redesign of nacdonline.org (in progress)</h3>
-                <p class="stack">A redesign initiative to turn flagship website responsive. Created JSON endpoints to support frontend Vue.JS client application.</p>
+                        
+                        <div class="time-card">
+                            <div class="period">2014 - 2018</div>
+                            <div class="description">
+                                <h3>WEB DEVELOPER - NATIONAL ASSOCIATION OF CORPORATE DIRECTORS (NACD)</h3>
+                                <p>Responsible for day to day maintenance and development of www.nacdonline.org and assisting with development on our force.com(Salesforce) member portal. Lead developer for development of our annual conference(Global Board Leaders Summit) microsite redesign. Additional responsibilities include planning and providing guidance to buisness units in preparation for development.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="time-card">
+                            <div class="period">2013 - 2014</div>
+                            <div class="description">
+                                <h3>FUNDS TRANSFER REPRESENTATIVE - BANK-FUND STAFF FEDERAL CREDIT UNION</h3>
+                                <p>Perform quality assurance, fraud mitigation, and wire investigation support for member facing staff.</p>
+                            </div>
+                        </div>
 
-                <h3 class="stack">Redesign of blog.nacdonline.org (in progress)</h3>
-                <p class="stack">Vue SSR and Express.js application using Wordpress as a headless CMS.</p>
+                       <div class="time-card">
+                            <div class="period">2011 - 2012</div>
+                            <div class="description">
+                                <h3>ACCOUNTS AND IT ADMINISTRATOR - VIOLA ENGINEERING, PC</h3>
+                                <p>Responsibilities included web administrator, development of custom project management work flow, Employee Handbook, and system for recovering delinquent client accounts.</p>
+                            </div>
+                       </div>
 
-                <h3 class="stack">DOMO Contact/Account Application</h3>
-                <p class="stack">Client application using Vue.js to explore Saleforce data in DOMO.</p>
+                        <div class="time-card">
+                            <div class="period">2010 - 2011</div>
+                            <div class="description">
+                                <h3>ASSISTANT MANAGER - TRAVELEX CURRENCY SERVICES</h3>
+                                <p>Responsible for liaising with international banks to investigate lost wire transfers, designing up-sell/cross-sell system, designing and implementing electronic system for investigative reporting, regular branch liaison for corporate offices, and staff training for new products and systems.</p>
+                            </div>
+                        </div>
 
-                <h3 class="stack">DOMO Data Connector</h3>
-                <p>Data connector (Express.js server) to bridge various platforms that do not have out of the box capability to link up to DOMO.</p>
+                        <div class="time-card">
+                            <div class="period last">2008 - 2010</div>
+                            <div class="description">
+                                <h3>CREDIT MANAGER - WELLS FARGO FINANCIAL</h3>
+                                <p>Duties included management of client's financial needs and goals based on cost/benefit analysis.</p>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="sexy_line"></div>
+                    <section>
+                        <h2>Education</h2>
+                        <p><strong>COLLEGE OF WILLIAM AND MARY, WILLIAMSBURG, VA <br>BACHELOR OF ARTS IN ECONOMICS (2008)</strong><br> Scholarship Athlete, Varsity Football (2003-2008), 2008 Quarterback Club Spirit Award for demonstration of leadership</p>
+                    </section>
+                    <div class="sexy_line"></div>
+                    <section class="skills">
+                        <h2>Skills &amp; Technology Stacks</h2>
+        
+                        <div class="category">
+                            <h3>Tech I use daily:</h3>
+                            <div class="circle-diagram">
+                                <ul class="badges">
+                                    <li>HTML/CSS</li>
+                                    <li>JavaScript</li>
+                                    <li>Node.js</li>
+                                    <li>Vue</li>
+                                    <li>Express</li>
+                                    <li>Coldfusion</li>
+                                    <li>Git</li>
+                                    <li>REST APIs</li>
+                                    <li>Heroku</li>
+                                    <li>DOMO</li>
+                                    <li>Google Analytics</li>
+                                    <li>Google Tag Manager</li>
+                                    <li>Command Line</li>
+                                    <li>Terminal</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="category">
+                            <h3>Tech I want to dive into:</h3>
+                            <div class="circle-diagram">
+                                <ul class="badges">
+                                    <li>a11y</li>
+                                    <li>mongoDB</li>
+                                    <li>graph ql</li>
+                                    <li>web sockets</li>
+                                    <li>service workers</li>
+                                </ul>
+                            </div>
+                        </div>
+            
+                        <div class="category">
+                            <h3>Tech I use occasionally:</h3>
+                            <div class="circle-diagram">
+                                <ul class="badges">
+                                    <li>Salesforce</li> 
+                                    <li>Apex</li>
+                                    <li>VisualForce</li>
+                                    <li>SOQL</li>
+                                    <li>PHP</li>
+                                    <li>SQL</li>
+                                    <li>MongoDB</li>
+                                    <li>Redis</li>
+                                    <li>Angular</li>
+                                    <li>Adobe Illustrator</li>
+                                </ul>
+                            </div>
+                        </div>
 
-                <h3 class="stack"><a href="http://www.violaengineering.com">Viola Engineering </a></h3>
-                <p class="stack">Custom responsive theme for WordPress.</p>
-
-            </section>
-            <section class="experience">
-
-                <h2>Experience</h2>
-                <div class="period">2018 - PRESENT</div>
-                <div class="description">
-                    <h3 class="stack">LEAD WEB DEVELOPER - NATIONAL ASSOCIATION OF CORPORATE DIRECTORS (NACD)</h3>
-                    <p class="stack">Responsible for managing and maintaining our web properties, including nacdonline.org, chapter subdomains, blog, internal DOMO applications and front-end support for Salesforce portal. Additional responsibilities include implementing DevOps/productivity strategies, code reviews and knowledge transfer to teammates.</p>
-                </div>
-
-                <div class="period">2014 - 2018</div>
-                <div class="description">
-                    <h3 class="stack">WEB DEVELOPER - NATIONAL ASSOCIATION OF CORPORATE DIRECTORS (NACD)</h3>
-                    <p class="stack">Responsible for day to day maintenance and development of www.nacdonline.org and assisting with development on our force.com(Salesforce) member portal. Lead developer for development of our annual conference(Global Board Leaders Summit) microsite redesign. Additional responsibilities include planning and providing guidance to buisness units in preparation for development.</p>
-                </div>
-                
-                <div class="period">2013 - 2014</div>
-                <div class="description">
-                    <h3 class="stack">FUNDS TRANSFER REPRESENTATIVE - BANK-FUND STAFF FEDERAL CREDIT UNION</h3>
-                    <p class="stack">Perform quality assurance, fraud mitigation, and wire investigation support for member facing staff.</p>
-                </div>
-
-                <div class="period">2011 - 2012</div>
-                <div class="description">
-                    <h3 class="stack">ACCOUNTS AND IT ADMINISTRATOR - VIOLA ENGINEERING, PC</h3>
-                    <p class="stack">Responsibilities included web administrator, development of custom project management work flow, Employee Handbook, and system for recovering delinquent client accounts.</p>
-                </div>
-
-                <div class="period">2010 - 2011</div>
-                <div class="description">
-                    <h3 class="stack">ASSISTANT MANAGER - TRAVELEX CURRENCY SERVICES</h3>
-                    <p class="stack">Responsible for liaising with international banks to investigate lost wire transfers, designing up-sell/cross-sell system, designing and implementing electronic system for investigative reporting, regular branch liaison for corporate offices, and staff training for new products and systems.</p>
-                </div>
-
-                <div class="period last">2008 - 2010</div>
-                <div class="description">
-                    <h3 class="stack">CREDIT MANAGER - WELLS FARGO FINANCIAL</h3>
-                    <p class="stack">Duties included management of client's financial needs and goals based on cost/benefit analysis.</p>
-                </div>
-            </section>
-
-            <section>
-                <h2>Education</h2>
-                <p><strong>COLLEGE OF WILLIAM AND MARY, WILLIAMSBURG, VA <br>BACHELOR OF ARTS IN ECONOMICS (2008)</strong><br> Scholarship Athlete, Varsity Football (2003-2008), 2008 Quarterback Club Spirit Award for demonstration of leadership</p>
-            </section>
-
-            <section class="skills">
-                <h2>Skills &amp; Technology Stacks</h2>
-                <div>
-                    <h3>Things I work with daily:</h3>
-                    <ul>
-                        <li>HTML/CSS</li>
-                        <li>JavaScript (Node.js, Vue, Express)</li>
-                        <li>Coldfusion</li>
-                        <li>Git</li>
-                        <li>REST APIs</li>
-                        <li>Heroku</li>
-                        <li>DOMO</li>
-                        <li>Google Analytics/Google Tag Manager</li>
-                        <li>Command Line/Terminal</li>
-                    </ul>
-                </div>
-
-               <div>
-                    <h3>Things I work with occasionally:</h3>
-                    <ul>
-                        <li>Salesforce Languages(Apex, VisualForce, SOQL)</li>
-                        <li>PHP</li>
-                        <li>SQL</li>
-                        <li>MongoDB</li>
-                        <li>Redis</li>
-                        <li>Angular</li>
-                        <li>Adobe Illustrator</li>
-                    </ul>
-               </div>
-            </section>
-
-        </main> -->
-        <!-- <footer>
-            <span id="year">2017</span> Tony Viola
-        </footer> -->
-        <script src="main.js"></script>
+                    </section>
+                </article>
+            </main>
+        </div>
+        <script src="/dist/main.js"></script>
     </body>
 </html>
